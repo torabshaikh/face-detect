@@ -10,12 +10,14 @@
 
 
 **Add cuda path in `~/.bashrc`**
+
 `export PATH=${PATH}:/usr/local/cuda-10.2/bin`
 `export CUDA_HOME=${CUDA_HOME}:/usr/local/cuda:/usr/local/cuda-10.2`
 `export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda-10.2/lib64`
 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64`
 
 **To build dlib**
+
 `git clone https://github.com/torabshaikh/dlib.git`
 `cd dlib`
 `mkdir build`
@@ -26,11 +28,14 @@
 `sudo ldconfig`
 
 To use openCV DNN GPU we need to build it with CUDA support
+
 **To build OpenCV**
 Install dependencies
+
 `sudo apt-get install build-essential cmake unzip pkg-config libjpeg-dev libpng-dev libtiff-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libatlas-base-dev gfortran`
 
 **Get OpenCV and Contrib**
+
 `cd ~/Documents`
 `mkdir opencv`
 `cd opencv`
@@ -38,11 +43,15 @@ Install dependencies
 `git clone https://github.com/torabshaikh/opencv_contrib.git`
 
 **Build opencv**
+
 `cd opencv`
 `mkdir build`
 `cd build`
+
 Run below command. Please find `CUDA_ARCH_BIN` from [cuda enabled GPU list](https://developer.nvidia.com/cuda-gpus)
-```bash cmake -D CMAKE_BUILD_TYPE=RELEASE \
+
+```bash
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D CMAKE_INSTALL_PREFIX=/usr/local \
 -D INSTALL_PYTHON3_EXAMPLES=ON \
 -D INSTALL_C_EXAMPLES=OFF \
